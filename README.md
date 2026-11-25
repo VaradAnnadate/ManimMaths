@@ -16,11 +16,11 @@ This project explains the geometric meaning and algebraic calculation of eigenva
 - [`_Code/render_all.py`](_Code/render_all.py) — Renders the animation scenes and creates a music-backed video.
 - [`_Code/generate_storyboard.py`](_Code/generate_storyboard.py) — Generates the storyboard PDF.
 
-The example uses
+The example uses the matrix
 
-\[
-A = \begin{bmatrix}3 & 1\\0 & 2\end{bmatrix},
-\]
+$$
+A = \begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix},
+$$
 
 with eigenvalues 3 and 2 and corresponding eigenvectors `(1, 0)` and `(-1, 1)`.
 
