@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+_Code/media/
+_Code/.svg_cache/
+_Code/concat_list.txt
+_Code/_Video_silent.mp4
+_Code/background_music.wav
+.DS_Store
