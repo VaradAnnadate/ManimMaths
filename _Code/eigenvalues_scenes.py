@@ -146,7 +146,7 @@ class Scene1_Hook(Scene):
         self.play(Write(title), run_time=1.4)
         self.play(FadeIn(subtitle, shift=UP * 0.15), Create(divider), run_time=1.0)
         self.play(FadeIn(student), run_time=0.8)
-        self.wait(4.0)
+        self.wait(9.49)
         self.play(FadeOut(opening), run_time=0.9)
 
         # --- Hook: Grid & Rotating vs Invariant Vectors ---
@@ -175,7 +175,7 @@ class Scene1_Hook(Scene):
             GrowArrow(vec_u), GrowArrow(vec_w), GrowArrow(vec_v1), GrowArrow(vec_v2),
             run_time=1.6,
         )
-        self.wait(3.0)
+        self.wait(7.11)
 
         hook_label = make_info_card(
             "Apply a 2D Linear Transformation",
@@ -187,7 +187,7 @@ class Scene1_Hook(Scene):
             width=5.6,
         ).to_corner(UR, buff=0.35)
         self.play(FadeIn(hook_label), run_time=0.9)
-        self.wait(2.5)
+        self.wait(5.93)
 
         # Animate transformation A
         new_u = tuple((A_MAT @ np.array(u_coords)).tolist())
@@ -203,7 +203,7 @@ class Scene1_Hook(Scene):
             Transform(vec_v2, _vec_arrow(new_v2, ACCENT_GOLD)),
             run_time=4.0,
         )
-        self.wait(3.5)
+        self.wait(8.3)
 
         # Fade out non-eigenvectors to spotlight the two invariant directions
         self.play(
@@ -225,7 +225,7 @@ class Scene1_Hook(Scene):
         ).to_corner(UR, buff=0.35)
 
         self.play(FadeIn(spotlight), Indicate(vec_v1, color=ACCENT_GREEN), Indicate(vec_v2, color=ACCENT_GOLD), run_time=1.5)
-        self.wait(8.0)
+        self.wait(18.97)
         self.play(FadeOut(*self.mobjects), run_time=1.0)
 
 
@@ -251,7 +251,7 @@ class Scene2_ConceptIntro(Scene):
         obj_box = SurroundingRectangle(obj_group, color=ACCENT_GOLD, buff=0.28, corner_radius=0.14, stroke_width=1.6)
 
         self.play(FadeIn(obj_group), Create(obj_box), run_time=1.3)
-        self.wait(6.5)
+        self.wait(8.4)
         self.play(FadeOut(obj_group), FadeOut(obj_box), run_time=0.8)
 
         # Formal Definition & Notation
@@ -260,7 +260,7 @@ class Scene2_ConceptIntro(Scene):
         eq_box = SurroundingRectangle(eq, color=ACCENT_BLUE, buff=0.28, corner_radius=0.14, stroke_width=2.0)
 
         self.play(Write(eq), Create(eq_box), run_time=1.6)
-        self.wait(4.0)
+        self.wait(9.35)
 
         # Define every symbol before use
         n1 = VGroup(
@@ -289,10 +289,10 @@ class Scene2_ConceptIntro(Scene):
 
         for item in [n1, n2, n3]:
             self.play(FadeIn(item, shift=RIGHT * 0.2), run_time=1.1)
-            self.wait(3.2)
+            self.wait(7.48)
 
         self.play(FadeIn(n4, shift=UP * 0.15), run_time=1.1)
-        self.wait(7.0)
+        self.wait(23.17)
         self.play(FadeOut(*self.mobjects), run_time=1.0)
 
 
@@ -338,7 +338,7 @@ class Scene3_VisualIntuition(Scene):
             FadeIn(i_lbl), FadeIn(j_lbl),
             run_time=1.4,
         )
-        self.wait(3.5)
+        self.wait(7.87)
 
         # Transform plane and basis vectors
         self.play(
@@ -351,7 +351,7 @@ class Scene3_VisualIntuition(Scene):
         i_after = math_svg(r"A\hat{\imath} = (3,0) = 3\hat{\imath}", color=ACCENT_GREEN, font_size=22).next_to(i_hat, DOWN, buff=0.2)
         j_after = math_svg(r"A\hat{\jmath} = (1,2) \text{ (rotated!)}", color=ACCENT_CORAL, font_size=22).next_to(j_hat, RIGHT, buff=0.18)
         self.play(FadeIn(i_after), FadeIn(j_after), run_time=1.0)
-        self.wait(6.0)
+        self.wait(13.48)
 
         # Reset plane cleanly to test second eigenvector v2 = (-1, 1)
         self.play(
@@ -369,7 +369,7 @@ class Scene3_VisualIntuition(Scene):
         v2_lbl = math_svg(r"\mathbf{v}_2 = (-1, 1)", color=ACCENT_GOLD, font_size=24).next_to(v2, LEFT, buff=0.18)
 
         self.play(Create(span_v2), GrowArrow(v2), FadeIn(v2_lbl), run_time=1.2)
-        self.wait(1.5)
+        self.wait(3.37)
 
         self.play(
             FadeOut(v2_lbl),
@@ -379,7 +379,7 @@ class Scene3_VisualIntuition(Scene):
         )
         v2_after = math_svg(r"A\mathbf{v}_2 = (-2, 2) = 2\mathbf{v}_2", color=ACCENT_GOLD, font_size=24).next_to(v2, LEFT, buff=0.2)
         self.play(FadeIn(v2_after), run_time=0.9)
-        self.wait(5.5)
+        self.wait(2.44)
 
         # Quick visual guide to what lambda values mean
         lambda_card = make_info_card(
@@ -394,7 +394,7 @@ class Scene3_VisualIntuition(Scene):
             width=5.0,
         ).to_corner(DR, buff=0.35)
         self.play(FadeIn(lambda_card), run_time=1.0)
-        self.wait(9.0)
+        self.wait(30.15)
         self.play(FadeOut(*self.mobjects), run_time=1.0)
 
 
@@ -426,9 +426,9 @@ class Scene4_WorkedExample(Scene):
         s1 = VGroup(s1_title, s1_eq1, s1_note).arrange(DOWN, buff=0.22).move_to(UP * 0.55)
 
         self.play(FadeIn(s1_title), Write(s1_eq1), run_time=1.8)
-        self.wait(2.5)
+        self.wait(4.3)
         self.play(FadeIn(s1_note), run_time=1.0)
-        self.wait(5.5)
+        self.wait(6.64)
         self.play(FadeOut(s1), run_time=0.8)
 
         # Step 2: Characteristic equation det(A - lambda I) = 0
@@ -441,11 +441,11 @@ class Scene4_WorkedExample(Scene):
 
         s2 = VGroup(s2_title, det_row, char_poly, roots).arrange(DOWN, buff=0.35).move_to(DOWN * 0.15)
         self.play(FadeIn(s2_title), FadeIn(det_row), run_time=1.4)
-        self.wait(3.0)
+        self.wait(5.17)
         self.play(Write(char_poly), run_time=1.5)
-        self.wait(2.5)
+        self.wait(4.3)
         self.play(Write(roots), run_time=1.4)
-        self.wait(5.0)
+        self.wait(8.61)
         self.play(FadeOut(s2), run_time=0.8)
 
         # Step 3: Eigenvectors for lambda_1 = 3 and lambda_2 = 2 side-by-side
@@ -484,11 +484,11 @@ class Scene4_WorkedExample(Scene):
 
         self.play(Create(sep), FadeIn(left_col[0]), FadeIn(right_col[0]), run_time=1.0)
         self.play(FadeIn(left_col[1]), FadeIn(right_col[1]), run_time=1.5)
-        self.wait(3.5)
+        self.wait(6.02)
         self.play(Write(left_col[2]), Write(right_col[2]), run_time=1.5)
-        self.wait(3.0)
+        self.wait(5.17)
         self.play(FadeIn(left_col[3]), FadeIn(right_col[3]), run_time=1.3)
-        self.wait(5.5)
+        self.wait(9.47)
         self.play(FadeOut(cols), FadeOut(sep), run_time=0.8)
 
         # Step 4: Verify by substitution!
@@ -512,9 +512,9 @@ class Scene4_WorkedExample(Scene):
         ver_group = VGroup(ver_title, ver1, ver2).arrange(DOWN, buff=0.45).move_to(DOWN * 0.2)
         self.play(FadeIn(ver_title), run_time=0.8)
         self.play(FadeIn(ver1), run_time=1.4)
-        self.wait(3.5)
+        self.wait(6.02)
         self.play(FadeIn(ver2), run_time=1.4)
-        self.wait(5.5)
+        self.wait(12.3)
         self.play(FadeOut(*self.mobjects), run_time=1.0)
 
 
@@ -538,7 +538,7 @@ class Scene5_Interpretation(Scene):
 
         self.play(Create(span_v1), Create(span_v2), GrowArrow(v1), GrowArrow(v2), run_time=1.3)
         self.play(GrowArrow(x_vec), FadeIn(x_lbl), run_time=1.3)
-        self.wait(5.0)
+        self.wait(9.96)
 
         info = make_info_card(
             "Why Eigenvectors Simplify Repeated Steps",
@@ -551,7 +551,7 @@ class Scene5_Interpretation(Scene):
             width=5.8,
         ).to_corner(UR, buff=0.35)
         self.play(FadeIn(info), run_time=1.0)
-        self.wait(5.0)
+        self.wait(2.0)
 
         # Animate A acting on v1, v2, x
         self.play(
@@ -564,7 +564,7 @@ class Scene5_Interpretation(Scene):
         )
         ax_lbl = math_svg(r"A\mathbf{x} = (5, 4)", color=ACCENT_PURPLE, font_size=24).next_to(x_vec, UP, buff=0.15)
         self.play(FadeIn(ax_lbl), run_time=0.9)
-        self.wait(5.5)
+        self.wait(2.0)
 
         # Trace & Determinant connection card
         td_card = make_info_card(
@@ -578,7 +578,7 @@ class Scene5_Interpretation(Scene):
             width=5.8,
         ).to_corner(DR, buff=0.35)
         self.play(FadeIn(td_card), run_time=1.0)
-        self.wait(8.0)
+        self.wait(32.84)
         self.play(FadeOut(*self.mobjects), run_time=1.0)
 
 
@@ -617,7 +617,7 @@ class Scene6_SummaryCredits(Scene):
             self.play(FadeIn(card, shift=UP * 0.2), run_time=1.1)
             self.wait(4.5)
 
-        self.wait(2.0)
+        self.wait(2)
         self.play(FadeOut(title), FadeOut(takeaways), run_time=0.9)
 
         # Closing Frame: Credits & AI Disclosure
