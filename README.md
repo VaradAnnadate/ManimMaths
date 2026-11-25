@@ -18,9 +18,10 @@ This project explains the geometric meaning and algebraic calculation of eigenva
 
 The example uses the matrix
 
-$$
-A = \begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix},
-$$
+```text
+      ⎡ 3  1 ⎤
+A  =  ⎣ 0  2 ⎦
+```
 
 with eigenvalues 3 and 2 and corresponding eigenvectors `(1, 0)` and `(-1, 1)`.
 
